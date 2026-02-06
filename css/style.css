@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Unzialish';
+    font-family: 'unzialish';
     src: url('../fonts/unzialish.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
@@ -28,7 +28,7 @@
     
     /* Tipografia */
     --font-heading: 'Bebas Neue', sans-serif;
-    --font-title: 'Unzialish', cursive;
+    --font-title: 'unzialish', cursive;
     --font-body: 'Inter', sans-serif;
 }
 
@@ -537,6 +537,16 @@ body::after {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+/* Texto de apoio do countdown — pré-venda */
+
+.countdown-subtext {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+
 
 .tickets-grid {
     display: grid;
