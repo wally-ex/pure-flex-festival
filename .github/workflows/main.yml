@@ -1,0 +1,27 @@
+name: Deploy PureFlex Site
+
+on:
+  push:
+    branches:
+      - main  # ou master, dependendo da sua branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Zip site files
+        run: zip -r site.zip .
+
+      - name: Upload via cPanel API
+        env:
+          CPANEL_HOST: "jeanstrela.online"
+          CPANEL_USER: "pureflex"   # usuário do subdomínio no HostGator
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          CPANEL_DIR: "/public_html/pureflex/"
+        run: |
+          curl -H"Authorization: cpanel $CPANEL_USER:$CPANEL_TOKEN" \
+          -F "file=@site.zip" \
+          "https://$CPANEL_HOST:2083/execute/Fileman/upload_files?dir=$CPANEL_DIR"
