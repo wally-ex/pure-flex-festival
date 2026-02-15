@@ -5,7 +5,7 @@ function updateCountdown() {
     // Data do evento: 05/04/2026 às 14:00
     const eventDate = new Date('2026-04-05T14:00:00').getTime();
     // Fim da pré-venda
-     const salesEndDate = new Date('2026-02-13T23:59:59').getTime();
+     const salesEndDate = new Date('2026-03-10T23:59:59').getTime();
 
     
     const now = new Date().getTime();
