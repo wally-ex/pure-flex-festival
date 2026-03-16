@@ -4,12 +4,9 @@
 function updateCountdown() {
     // Data do evento: 05/04/2026 às 14:00
     const eventDate = new Date('2026-04-05T14:00:00').getTime();
-    // Fim da pré-venda
-     const salesEndDate = new Date('2026-03-10T23:59:59').getTime();
-
     
     const now = new Date().getTime();
-    const distance = salesEndDate - now;
+    const distance = eventDate - now;
 
     if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
